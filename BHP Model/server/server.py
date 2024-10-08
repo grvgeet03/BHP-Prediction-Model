@@ -1,6 +1,5 @@
 from flask import Flask, request, jsonify
-from . import util
-import os
+import util
 
 app = Flask(__name__)
 
@@ -28,5 +27,6 @@ def predict_home_price():
     return response
 
 if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 5001))  # get the port from the environment
-    app.run(host="0.0.0.0", port=port)  # run on the specified port
+    print("Starting Python Flask Server For Home Price Prediction...")
+    util.load_saved_artifacts()
+    app.run(port=5001)
