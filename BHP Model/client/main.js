@@ -27,7 +27,7 @@ function onClickedEstimatePrice() {
   var estPrice = document.getElementById("uiEstimatedPrice");
 
   // var url = "http://127.0.0.1:5001/predict_home_price"; //Use this if you are NOT using nginx.
-  var url = "/api/predict_home_price"; // Use this if  you are using nginx.
+  var url = "/predict_home_price"; // Use this if  you are using nginx.
 
   $.post(url, {
       total_sqft: parseFloat(sqft.value),
@@ -44,7 +44,7 @@ function onClickedEstimatePrice() {
 function onPageLoad() {
   console.log( "document loaded" );
   // var url = "http://127.0.0.1:5001/get_location_names"; // Use this if you are NOT using nginx.
-  var url = "/api/get_location_names"; // Use this if  you are using nginx.
+  var url = "/get_location_names"; // Use this if  you are using nginx.
   $.get(url,function(data, status) {
       console.log("got response for get_location_names request");
       if(data) {
